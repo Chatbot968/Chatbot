@@ -66,7 +66,13 @@
       this.container.innerHTML = `
         <div id="chatbot-widget" class="chatbot-widget">
           <div class="chatbot-header">
-            <div class="chatbot-controls" style="margin-right: 12px;">
+            <div class="chatbot-logo">
+              <img src="${this.clientConfig?.logo_url || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyQzIgMTcuNTIgNi40OCAyMiAxMiAyMkMxNy41MiAyMiAyMiAxNy41MiAyMiAxMkMyMiA2LjQ4IDE3LjUyIDIgMTIgMloiIGZpbGw9IiM2QjcyODAiLz4KPHBhdGggZD0iTTggMTJIMTZNNyAxNkgxN00xMCA4SDE0IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K'}" alt="Logo" />
+            </div>
+            <div class="chatbot-title">
+              <h3>${this.clientConfig?.bot_description || 'Assistant virtuel'}</h3>
+            </div>
+            <div class="chatbot-controls">
               <button class="chatbot-btn chatbot-btn-maximize" id="maximize-btn" title="Agrandir/Réduire">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -79,12 +85,6 @@
                   <line x1="6" y1="6" x2="18" y2="18"/>
                 </svg>
               </button>
-            </div>
-            <div class="chatbot-logo">
-              <img src="${this.clientConfig?.logo_url || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyQzIgMTcuNTIgNi40OCAyMiAxMiAyMkMxNy41MiAyMiAyMiAxNy41MiAyMiAxMkMyMiA2LjQ4IDE3LjUyIDIgMTIgMloiIGZpbGw9IiM2QjcyODAiLz4KPHBhdGggZD0iTTggMTJIMTZNNyAxNkgxN00xMCA4SDE0IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K'}" alt="Logo" />
-            </div>
-            <div class="chatbot-title">
-              <h3>${this.clientConfig?.bot_description || 'Assistant virtuel'}</h3>
             </div>
           </div>
           
@@ -390,6 +390,7 @@
         .chatbot-header {
           display: flex;
           align-items: center;
+          justify-content: space-between;
           padding: 16px;
           background: ${this.clientConfig?.color_primary || '#6B7280'};
           color: white;
@@ -409,19 +410,25 @@
           object-fit: cover;
         }
 
+        .chatbot-title {
+          flex: 1;
+          margin-left: 12px;
+        }
+
         .chatbot-title h3 {
           margin: 0;
           font-size: 14px;
           font-weight: 600;
-          flex: 1;
         }
 
         .chatbot-controls {
           display: flex;
           gap: 8px;
+          justify-content: flex-end;
+          align-items: center;
         }
 
-        .chatbot-btn {
+        .chatbot-btn-maximize, .chatbot-btn-close {
           background: none;
           border: none;
           color: white;
@@ -431,18 +438,26 @@
           transition: background-color 0.2s;
         }
 
-        .chatbot-btn:hover {
-          background: rgba(255, 255, 255, 0.1);
+        .chatbot-btn-maximize:hover, .chatbot-btn-close:hover {
+          background: rgba(255,255,255,0.1);
         }
 
-        .chatbot-btn.listening {
-          background: rgba(255, 255, 255, 0.2);
-          animation: pulse 1.5s infinite;
+        .chatbot-btn-voice {
+          background: ${this.clientConfig?.color_primary || '#6B7280'};
+          color: white;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          margin-right: 8px;
+          transition: background-color 0.2s;
         }
 
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.7; }
+        .chatbot-btn-voice:hover {
+          background: ${this.clientConfig?.color_primary || '#6B7280'}dd;
         }
 
         .chatbot-messages {
