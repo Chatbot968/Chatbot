@@ -43,7 +43,7 @@
 
     async loadClientConfig() {
       try {
-        const response = await fetch(`https://backend-ohha.onrender.com/configs/${this.clientId}.json`);
+        const response = await fetch(`https://backend-dxeo.onrender.com/configs/${this.clientId}.json`);
         if (!response.ok) {
           throw new Error(`Configuration introuvable pour le client: ${this.clientId}`);
         }
