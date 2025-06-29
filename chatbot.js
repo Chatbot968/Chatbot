@@ -325,14 +325,6 @@
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        /* PATCH DEBUG: Forcer l'affichage du bouton toggle */
-        #chatbot-widget-container .chatbot-toggle {
-          opacity: 1 !important;
-          display: block !important;
-          z-index: 2147483647 !important;
-          background: #e11d48 !important; /* rose flashy pour debug */
-        }
-
         .chatbot-widget {
           position: fixed;
           bottom: 20px;
