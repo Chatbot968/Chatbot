@@ -66,13 +66,7 @@
       this.container.innerHTML = `
         <div id="chatbot-widget" class="chatbot-widget">
           <div class="chatbot-header">
-            <div class="chatbot-logo">
-              <img src="${this.clientConfig?.logo_url || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyQzIgMTcuNTIgNi40OCAyMiAxMiAyMkMxNy41MiAyMiAyMiAxNy41MiAyMiAxMkMyMiA2LjQ4IDE3LjUyIDIgMTIgMloiIGZpbGw9IiM2QjcyODAiLz4KPHBhdGggZD0iTTggMTJIMTZNNyAxNkgxN00xMCA4SDE0IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K'}" alt="Logo" />
-            </div>
-            <div class="chatbot-title">
-              <h3>${this.clientConfig?.bot_description || 'Assistant virtuel'}</h3>
-            </div>
-            <div class="chatbot-controls">
+            <div class="chatbot-controls" style="margin-right: 12px;">
               <button class="chatbot-btn chatbot-btn-maximize" id="maximize-btn" title="Agrandir/Réduire">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -85,6 +79,12 @@
                   <line x1="6" y1="6" x2="18" y2="18"/>
                 </svg>
               </button>
+            </div>
+            <div class="chatbot-logo">
+              <img src="${this.clientConfig?.logo_url || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyQzIgMTcuNTIgNi40OCAyMiAxMiAyMkMxNy41MiAyMiAyMiAxNy41MiAyMiAxMkMyMiA2LjQ4IDE3LjUyIDIgMTIgMloiIGZpbGw9IiM2QjcyODAiLz4KPHBhdGggZD0iTTggMTJIMTZNNyAxNkgxN00xMCA4SDE0IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K'}" alt="Logo" />
+            </div>
+            <div class="chatbot-title">
+              <h3>${this.clientConfig?.bot_description || 'Assistant virtuel'}</h3>
             </div>
           </div>
           
